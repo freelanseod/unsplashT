@@ -1,0 +1,27 @@
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+apply plugin: 'application'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.12'
+}
+mainClassName ="UnsplashTest"
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    testCompile 'com.codeborne:selenide:4.8'
+    testCompile 'org.testng:testng:6.10'
+}
+
+test {
+    maxParallelForks = 5
+}
+
+
